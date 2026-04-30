@@ -28,7 +28,12 @@ their size:
 - **Results** — evaluation outputs, confusion matrix data, forensic
   calibration tables
 
-> Drive link: `<INSERT GOOGLE DRIVE LINK HERE>`
+> **Google Drive folder:** https://drive.google.com/drive/folders/1OVemRC3aNZaGDox8PFrp2k3oF_F3i1ED?usp=sharing
+>
+> The folder contains `best.pt` (the trained model) and `dataset/`
+> (the 12,242 AI images used as the AI class, plus a text file with
+> the URLs for the two public Kaggle datasets used for the real
+> class — Unsplash and FFHQ).
 
 ## Quick start
 
