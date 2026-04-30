@@ -10,9 +10,12 @@ __pycache__/
 venv/
 env/
 
-# Trained model — too large for GitHub, hosted on Google Drive
+# Trained model — too large for GitHub, hosted on Google Drive.
+# Keep the models/ folder itself in the repo (with .gitkeep) so the
+# path exists when someone clones — only the weights are excluded.
 models/*.pt
 models/*.pth
+!models/.gitkeep
 
 # User uploads at runtime
 static/uploads/

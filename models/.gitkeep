@@ -1,0 +1,4 @@
+Place the trained model checkpoint here.
+
+Download `best.pt` from the Google Drive folder linked in the README
+and save it as `models/best.pt`.
