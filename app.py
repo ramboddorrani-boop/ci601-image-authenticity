@@ -11,9 +11,9 @@ from torchvision import models, transforms
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 from forensics import analyse as analyse_forensics
 
-ROOT = Path(__file__).resolve().parents[1]
-MODEL_PATH = ROOT / "code" / "models" / "best.pt"
-UPLOAD_DIR = ROOT / "code" / "static" / "uploads"
+ROOT = Path(__file__).resolve().parent
+MODEL_PATH = ROOT / "models" / "best.pt"
+UPLOAD_DIR = ROOT / "static" / "uploads"
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 MEAN = [0.485, 0.456, 0.406]
