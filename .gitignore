@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Trained model — too large for GitHub, hosted on Google Drive
+models/*.pt
+models/*.pth
+
+# User uploads at runtime
+static/uploads/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS / misc
+Thumbs.db
+*.log

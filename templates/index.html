@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/analyse" method="post" enctype="multipart/form-data" id="upload-form">
+  <label for="file-input" class="drop">
+    <span>Drop an image here, or click to choose a file.</span>
+    <span class="hint">JPG, PNG or WebP up to 16 MB.</span>
+    <input id="file-input" type="file" name="image" accept="image/*" required>
+  </label>
+  <button type="submit">Analyse</button>
+</form>
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<script>
+  const drop = document.querySelector('.drop');
+  const input = document.getElementById('file-input');
+  const form = document.getElementById('upload-form');
+
+  ['dragenter','dragover'].forEach(e =>
+    drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave','drop'].forEach(e =>
+    drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop', ev => {
+    if (ev.dataTransfer.files.length) {
+      input.files = ev.dataTransfer.files;
+      form.submit();
+    }
+  });
+  input.addEventListener('change', () => { if (input.files.length) form.submit(); });
+</script>
+{% endblock %}

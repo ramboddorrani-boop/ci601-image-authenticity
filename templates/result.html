@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="result">
+  <img src="{{ image_url }}" alt="{{ filename }}">
+
+  <div class="details">
+    <h2>{{ verdict }}</h2>
+    <p class="conf">Confidence: {{ confidence }}%</p>
+
+    <table>
+      <tr><td>Probability AI-generated</td><td>{{ p_ai }}</td></tr>
+      <tr><td>Probability real photograph</td><td>{{ p_real }}</td></tr>
+      <tr><td>File</td><td>{{ filename }}</td></tr>
+      <tr><td>Dimensions</td><td>{{ width }} × {{ height }}</td></tr>
+    </table>
+
+    <h3>Additional checks</h3>
+    <ul>
+      <li><strong>Compression error analysis.</strong> {{ ela }}</li>
+      <li><strong>Camera metadata.</strong> {{ exif }}</li>
+      <li><strong>Noise pattern.</strong> {{ noise }}</li>
+    </ul>
+
+    <p><a href="/">Analyse another image</a></p>
+  </div>
+</div>
+{% endblock %}

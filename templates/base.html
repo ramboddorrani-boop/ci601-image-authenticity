@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Image authenticity{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Image authenticity</h1>
+      <p class="sub">Check whether a picture is a photograph or AI-generated.</p>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+      <small>CI601 project &middot; Rambod Dorrani</small>
+    </footer>
+  </main>
+</body>
+</html>
