@@ -132,12 +132,11 @@ The 98.7% test accuracy is **in-distribution**: the test images come
 from the same generators (Midjourney v6.1, Nano Banana) that supplied
 the training data. Real-world performance against generators the
 classifier has never seen — Stable Diffusion 3, DALL-E 3, FLUX,
-Imagen 3 — is unknown and may be substantially lower (Corvi et al.,
-2023). The forensic signals partly mitigate this by providing
+Imagen 3 is unknown and may be substantially lower. The forensic signals partly mitigate this by providing
 independent evidence the user can interrogate, but they do not close
 the cross-generator generalisation gap.
 
-Full discussion in §5 (Critical Review) of the dissertation report.
+Full discussion in section 5 (Critical Review) of the dissertation report.
 
 ## Dependencies
 
