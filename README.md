@@ -17,23 +17,26 @@ Test accuracy: **98.7%** on a balanced held-out set of 3,674 images
 (F1 = 0.987 on both classes). The full methodology, results, and
 critical review are in the accompanying dissertation report.
 
-## External resources (Google Drive)
+## External resources
 
-The trained model and dataset are hosted on Google Drive because of
-their size:
+The trained model is hosted on Google Drive (too large for the
+repository), and the training data is hosted on Kaggle.
 
-- **`best.pt`** (~90 MB) — trained model checkpoint, validation
-  accuracy 0.989
-- **Dataset** — 24,484 images split 70/15/15 (train/val/test)
-- **Results** — evaluation outputs, confusion matrix data, forensic
-  calibration tables
+**Google Drive folder (model checkpoint and report):**
+https://drive.google.com/drive/folders/1OVemRC3aNZaGDox8PFrp2k3oF_F3i1ED?usp=sharing
 
-> **Google Drive folder:** https://drive.google.com/drive/folders/1OVemRC3aNZaGDox8PFrp2k3oF_F3i1ED?usp=sharing
->
-> The folder contains `best.pt` (the trained model) and `dataset/`
-> (the 12,242 AI images used as the AI class, plus a text file with
-> the URLs for the two public Kaggle datasets used for the real
-> class — Unsplash and FFHQ).
+The folder contains `best.pt` (~90 MB, validation accuracy 0.989,
+test accuracy 0.987), the dissertation report, the evaluation outputs,
+and a text file listing the three Kaggle dataset URLs.
+
+**Kaggle datasets (training data):**
+
+- AI images (12,242, the AI class):
+  https://www.kaggle.com/datasets/rambodorrani/ai-images
+- Unsplash photographs (9,181 used for the real class):
+  https://www.kaggle.com/datasets/jettchentt/unsplash-dataset-images-downloaded-250x250
+- FFHQ faces subset (3,061 used for the real class):
+  https://www.kaggle.com/datasets/tommykamaz/faces-dataset-small
 
 ## Quick start
 
@@ -94,10 +97,10 @@ static/
 Training was done on a Kaggle notebook with dual T4 GPU
 acceleration. The full pipeline takes about 47 minutes.
 
-1. Upload the three source datasets to Kaggle:
-   - The AI image dataset (Midjourney v6.1 + Nano Banana)
-   - Unsplash images (`jettchentt/unsplash-dataset-images-downloaded-250x250`)
-   - FFHQ face subset (`tommykamaz/faces-dataset-small`)
+1. Add the three Kaggle datasets to a new Kaggle notebook:
+   - `rambodorrani/ai-images` (the AI image dataset)
+   - `jettchentt/unsplash-dataset-images-downloaded-250x250`
+   - `tommykamaz/faces-dataset-small`
 2. Run `notebooks/kaggle_train.py` as a Kaggle notebook
 3. Download `best.pt` from `/kaggle/working/`
 
